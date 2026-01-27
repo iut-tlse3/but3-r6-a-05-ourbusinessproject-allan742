@@ -1,9 +1,14 @@
 package ourbusinessproject;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 
-
+@Entity
 public class Project {
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @NotBlank
     private String title;
     private String description;
