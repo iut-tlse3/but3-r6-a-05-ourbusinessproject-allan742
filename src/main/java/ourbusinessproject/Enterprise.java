@@ -12,44 +12,57 @@ import jakarta.validation.constraints.Size;
 public class Enterprise {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     @NotBlank
-    private String Name;
+    private String name;
     @Size(min = 10)
-    private String Description;
+    private String description;
     @NotBlank
-    private String ContactName;
+    private String contactName;
     @NotBlank @Email
-    private String ContactEmail;
+    private String contactEmail;
 
     /**
-     * Set the name
-     * @param name the name
+     *
+     * @param name ..
      */
     public void setName(String name) {
-        this.Name = name;
+        this.name = name;
     }
 
-    /**
-     * Set the name
-     * @param description the description
-     */
-    public void setDescription (String description) {
-        this.Description = description;
+    public Long getId() {
+        return id;
     }
 
-    /**
-     * Set the contactName
-     * @param contactName the contactName
-     */
-    public void setContactName (String contactName) {
-        this.ContactName = contactName;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    /**
-     * Set the contactEmail
-     * @param contactEmail the contactEMail
-     */
-    public void setContactEmail (String contactEmail) {
-        this.ContactEmail = contactEmail;
+    public String getName() {
+        return name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setContactName(String contactName) {
+        this.contactName = contactName;
+    }
+
+    public String getContactName() {
+        return contactName;
+    }
+
+    public void setContactEmail(String contactEmail) {
+        this.contactEmail = contactEmail;
+    }
+
+    public String getContactEmail() {
+        return contactEmail;
     }
 }
