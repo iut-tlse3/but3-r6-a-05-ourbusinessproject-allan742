@@ -3,12 +3,11 @@ package ourbusinessproject;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import org.springframework.beans.PropertyValues;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
 @Entity
 public class Enterprise {
@@ -74,7 +73,7 @@ public class Enterprise {
     }
     public void addProject (Project project) {
         if (projects == null) {
-            projects = new ArrayList<>();
+            projects = new HashSet<>();
         }
         projects.add(project);
     }
