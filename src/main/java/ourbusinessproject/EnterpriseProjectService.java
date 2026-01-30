@@ -85,9 +85,16 @@ public class EnterpriseProjectService {
         return this.entityManager.find(Enterprise.class, enterpriseId);
     }
 
+    /**
+     * Récupère les projets depuis la base de données
+     * @return la liste de tous les projets
+     */
     public List<Project> findAllProjects() {
-        String query = "SELECT p FROM Project p ORDER BY title";
-        TypedQuery<Project> queryObj = entityManager.createQuery(query, Project.class);
-        return queryObj.getResultList();
+        String queryAsJpql = "select p from Project p order by p.title";
+        TypedQuery<Project> query = this.entityManager.createQuery(
+                queryAsJpql,
+                Project.class
+        );
+        return query.getResultList();
     }
 }
